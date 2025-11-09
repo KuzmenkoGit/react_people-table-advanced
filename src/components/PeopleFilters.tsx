@@ -38,6 +38,13 @@ export const PeopleFilters = () => {
     setSearchParams(newParams);
   };
 
+  const resetCenturiesFilter = () => {
+    const newParams = new URLSearchParams(searchParams);
+
+    newParams.delete('centuries');
+    setSearchParams(newParams);
+  };
+
   const resetAllFilters = () => {
     setSearchParams({});
   };
@@ -102,7 +109,7 @@ export const PeopleFilters = () => {
               data-cy="centuryALL"
               type="button"
               className="button is-success is-outlined"
-              onClick={resetAllFilters}
+              onClick={resetCenturiesFilter}
             >
               All
             </button>
